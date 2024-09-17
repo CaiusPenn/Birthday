@@ -117,9 +117,8 @@ body {
 }
 
 .flower-background {
+    top: -30px;
     position: absolute; /* Positions the image relative to its parent */
-    top: 0;
-    left: 0;
     width: auto; /* Ensures the image covers the full width */
     height: auto; /* Ensures the image covers the full height */
     object-fit: cover; /* Ensures the image covers the area without stretching */
