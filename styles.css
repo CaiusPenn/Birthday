@@ -33,7 +33,7 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 90%; /* Adjust for responsiveness */
+  width: 70%; /* Adjust for responsiveness */
   max-width: 600px; /* Maximum width */
   height: auto; /* Allow height to adjust */
   aspect-ratio: 3/2; /* Maintain aspect ratio */
@@ -51,6 +51,7 @@ body {
 .envelope-open {
   display: none; /* Hide envelope open state initially */
   position: absolute;
+  width: 100%;
   top: 0;
   z-index: 1; /* Ensure the open envelope is above the closed envelope */
 }
