@@ -89,7 +89,7 @@ body {
 
 .text-overlay {
   position: absolute; /* Allows positioning over the image */
-  top: 40%; /* Use percentage for responsiveness */
+  top: 30%; /* Use percentage for responsiveness */
   left: 50%; /* Center horizontally */
   transform: translate(-50%, -50%); /* Center the text precisely */
   color: black; /* Text color */
