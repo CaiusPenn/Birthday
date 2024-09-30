@@ -134,23 +134,20 @@ $box-shadow2: ();
                hsl(random(360), 100, 50);
   $box-shadow2: $box-shadow2, 0 0 #fff
 }
+
 @mixin keyframes ($animationName) {
     @-webkit-keyframes #{$animationName} {
         @content;
     }
-
     @-moz-keyframes #{$animationName} {
         @content;
     }
-
     @-o-keyframes #{$animationName} {
         @content;
     }
-
     @-ms-keyframes #{$animationName} {
         @content;
     }
-
     @keyframes #{$animationName} {
         @content;
     }
@@ -188,20 +185,18 @@ $box-shadow2: ();
     -ms-transform: $settings;
 }
 
-
-
 .pyro > .before, .pyro > .after {
   position: absolute;
   width: 5px;
   height: 5px;
   border-radius: 50%;
   box-shadow: $box-shadow2;
-  @include animation((1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards));
+  @include animation((4s bang ease-out infinite backwards, 4s gravity ease-in infinite backwards, 8s position linear infinite backwards)); // Increased timings
 }
     
 .pyro > .after {
-  @include animation-delay((1.25s, 1.25s, 1.25s));
-  @include animation-duration((1.25s, 1.25s, 6.25s));
+  @include animation-delay((5s, 5s, 5s)); // Increased delay
+  @include animation-duration((5s, 5s, 10.5s)); // Increased duration
 }
         
 @include keyframes(bang) {
