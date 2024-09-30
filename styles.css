@@ -87,6 +87,10 @@ body {
   z-index: 3; /* Ensure the paper is above the envelope */
 }
 
+.love-message {
+  margin-top: 20px; /* Adjust the value as needed */
+}
+
 .text-overlay {
   position: absolute; /* Allows positioning over the image */
   top: 25%; /* Use percentage for responsiveness */
