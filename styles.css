@@ -89,13 +89,14 @@ body {
 
 .text-overlay {
   position: absolute; /* Allows positioning over the image */
-  top: 30%; /* Use percentage for responsiveness */
+  top: 25%; /* Use percentage for responsiveness */
   left: 50%; /* Center horizontally */
   transform: translate(-50%, -50%); /* Center the text precisely */
   color: black; /* Text color */
   text-align: center; /* Center align text */
   padding: 20px; /* Space around the text */
   width: 80%; /* Responsive width */
+  height: 20%;
   background: rgba(255, 255, 255, 0.8); /* Optional: semi-transparent background for better readability */
 }
 
@@ -336,6 +337,7 @@ body {
 
 .flowers {
   position: absolute;
+  
   transform: scale(0.9);
 }
 
