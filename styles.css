@@ -75,7 +75,7 @@ body {
 .paper {
   display: none; /* Hide paper initially */
   position: absolute;
-  width: 90%; /* Use percentage for responsiveness */
+  width:120%; /* Use percentage for responsiveness */
   max-width: 600px; /* Maximum width */
   height: auto; /* Maintain aspect ratio */
   top: 0; /* Start at the top */
