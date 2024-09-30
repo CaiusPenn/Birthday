@@ -35,15 +35,17 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 600px; /* Adjust size as needed */
-    height: 400px; /* Adjust size as needed */
+    width: 90%; /* Adjust for responsiveness */
+    max-width: 600px; /* Maximum width */
+    height: auto; /* Allow height to adjust */
+    aspect-ratio: 3 / 2; /* Maintain aspect ratio */
     animation: flyInFromTop 1s ease-out; /* Apply the fly-in animation */
 }
 
 .envelope {
     cursor: pointer;
-    width: 600px; /* Adjust size as needed */
-    height: 400px;
+    width: 100%; /* Use percentage for responsiveness */
+    height: auto; /* Maintain aspect ratio */
     position: absolute; /* Ensure it's positioned absolutely within the container */
     z-index: 1;
 }
@@ -57,8 +59,8 @@ body {
 
 .envelope-open-image {
     cursor: pointer;
-    width: 600px; /* Adjust size as needed */
-    height: 400px;
+    width: 100%; /* Use percentage for responsiveness */
+    height: auto; /* Maintain aspect ratio */
 }
 
 @keyframes fadeIn {
@@ -75,9 +77,10 @@ body {
 .paper {
     display: none; /* Hide paper initially */
     position: absolute;
-    height: 400px;
-    width: 600px;
-    top: 0; /* Start at the top */ /* Adjust size as needed */
+    width: 90%; /* Use percentage for responsiveness */
+    max-width: 600px; /* Maximum width */
+    height: auto; /* Maintain aspect ratio */
+    top: 0; /* Start at the top */
     background: #fff;
     padding: 10px;
     border-radius: 10px;
@@ -88,16 +91,14 @@ body {
 
 .text-overlay {
     position: absolute; /* Allows positioning over the image */
-    top: 90px; /* Center vertically */
-    left: 302px; /* Center horizontally */
+    top: 20%; /* Use percentage for responsiveness */
+    left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Center the text precisely */
     color: black; /* Text color */
     text-align: center; /* Center align text */
     padding: 20px; /* Space around the text */
-    width: 516px;
-    height: 70px;
-    background: rgba(255, 255, 255, 1); /* Optional: semi-transparent background for better readability */
-    
+    width: 80%; /* Responsive width */
+    background: rgba(255, 255, 255, 0.8); /* Optional: semi-transparent background for better readability */
 }
 
 /* Optional: Adjust text styles */
@@ -119,8 +120,8 @@ body {
 .flower-background {
     top: -30px;
     position: absolute; /* Positions the image relative to its parent */
-    width: auto; /* Ensures the image covers the full width */
-    height: auto; /* Ensures the image covers the full height */
+    width: 100%; /* Cover the full width */
+    height: auto; /* Maintain aspect ratio */
     object-fit: cover; /* Ensures the image covers the area without stretching */
     z-index: -1; /* Places the background image behind other elements */
 }
