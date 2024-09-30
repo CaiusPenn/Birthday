@@ -52,7 +52,7 @@ body {
   display: none; /* Hide envelope open state initially */
   position: absolute;
   width: 100%;
-  top: 0;
+  bottom: -3%;
   z-index: 1; /* Ensure the open envelope is above the closed envelope */
 }
 
