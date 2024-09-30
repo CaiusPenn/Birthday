@@ -1,0 +1,253 @@
+body {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: radial-gradient(circle, #87CEFA, #4682B4); /* Radial gradient background */
+    margin: 0;
+}
+
+@keyframes flyOutDown {
+    from {
+        transform: translateY(0); /* Start at original position */
+        opacity: 1; /* Fully visible */
+    }
+    to {
+        transform: translateY(100vh); /* Move downwards out of view */
+        opacity: 0; /* Fade out */
+    }
+}
+
+@keyframes flyInFromTop {
+    from {
+        transform: translateY(-100vh); /* Start from above the viewport */
+        opacity: 0; /* Start invisible */
+    }
+    to {
+        transform: translateY(0); /* End at original position */
+        opacity: 1; /* End fully visible */
+    }
+}
+
+.envelope-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 90%; /* Adjust for responsiveness */
+    max-width: 600px; /* Maximum width */
+    height: auto; /* Allow height to adjust */
+    aspect-ratio: 3 / 2; /* Maintain aspect ratio */
+    animation: flyInFromTop 1s ease-out; /* Apply the fly-in animation */
+}
+
+.envelope {
+    cursor: pointer;
+    width: 100%; /* Use percentage for responsiveness */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute; /* Ensure it's positioned absolutely within the container */
+    z-index: 1;
+}
+
+.envelope-open {
+    display: none; /* Hide envelope open state initially */
+    position: absolute;
+    top: 0;
+    z-index: 1; /* Ensure the open envelope is above the closed envelope */
+}
+
+.envelope-open-image {
+    cursor: pointer;
+    width: 100%; /* Use percentage for responsiveness */
+    height: auto; /* Maintain aspect ratio */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start invisible */
+        transform: scale(1.05); /* Start slightly larger */
+    }
+    to {
+        opacity: 1; /* End fully visible */
+        transform: scale(1); /* End at normal size */
+    }
+}
+
+.paper {
+    display: none; /* Hide paper initially */
+    position: absolute;
+    width: 90%; /* Use percentage for responsiveness */
+    max-width: 600px; /* Maximum width */
+    height: auto; /* Maintain aspect ratio */
+    top: 0; /* Start at the top */
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    z-index: 3; /* Ensure the paper is above the envelope */
+}
+
+.text-overlay {
+    position: absolute; /* Allows positioning over the image */
+    top: 20%; /* Use percentage for responsiveness */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the text precisely */
+    color: black; /* Text color */
+    text-align: center; /* Center align text */
+    padding: 20px; /* Space around the text */
+    width: 80%; /* Responsive width */
+    background: rgba(255, 255, 255, 0.8); /* Optional: semi-transparent background for better readability */
+}
+
+/* Optional: Adjust text styles */
+.text-overlay h2, .text-overlay p {
+    margin: 0; /* Remove default margins */
+    font-family: Arial, sans-serif; /* Adjust font-family if needed */
+}
+
+.background {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex; /* Use flexbox for centering the flower */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+.flower-background {
+    top: -30px;
+    position: absolute; /* Positions the image relative to its parent */
+    width: 100%; /* Cover the full width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensures the image covers the area without stretching */
+    z-index: -1; /* Places the background image behind other elements */
+}
+
+
+$particles: 50;
+$width: 500;
+$height: 500;
+
+// Create the explosion...
+$box-shadow: ();
+$box-shadow2: ();
+@for $i from 0 through $particles {
+  $box-shadow: $box-shadow,
+               random($width)-$width / 2 + px
+               random($height)-$height / 1.2 + px
+               hsl(random(360), 100, 50);
+  $box-shadow2: $box-shadow2, 0 0 #fff
+}
+@mixin keyframes ($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+
+    @-ms-keyframes #{$animationName} {
+        @content;
+    }
+
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+@mixin animation-delay ($settings) {
+    -moz-animation-delay: $settings;
+    -webkit-animation-delay: $settings;
+    -o-animation-delay: $settings;
+    -ms-animation-delay: $settings;
+    animation-delay: $settings;
+}
+
+@mixin animation-duration ($settings) {
+    -moz-animation-duration: $settings;
+    -webkit-animation-duration: $settings;
+    -o-animation-duration: $settings;
+    -ms-animation-duration: $settings;
+    animation-duration: $settings;
+}
+
+@mixin animation ($settings) {
+    -moz-animation: $settings;
+    -webkit-animation: $settings;
+    -o-animation: $settings;
+    -ms-animation: $settings;
+    animation: $settings;
+}
+
+@mixin transform ($settings) {
+    transform: $settings;
+    -moz-transform: $settings;
+    -webkit-transform: $settings;
+    -o-transform: $settings;
+    -ms-transform: $settings;
+}
+
+body {
+  margin:0;
+  padding:0;
+  background: #000;
+  overflow: hidden;
+}
+
+.pyro > .before, .pyro > .after {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  box-shadow: $box-shadow2;
+  @include animation((1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards));
+}
+    
+.pyro > .after {
+  @include animation-delay((1.25s, 1.25s, 1.25s));
+  @include animation-duration((1.25s, 1.25s, 6.25s));
+}
+        
+@include keyframes(bang) {
+  to {
+    box-shadow:$box-shadow;
+  }
+}
+    
+@include keyframes(gravity)  {
+  to {
+    @include transform(translateY(200px));
+    opacity: 0;
+  }
+}
+    
+@include keyframes(position) {
+  0%, 19.9% {
+    margin-top: 10%;
+    margin-left: 40%;
+  }
+  20%, 39.9% {
+    margin-top: 40%;
+    margin-left: 30%;
+  }
+  40%, 59.9% {  
+    margin-top: 20%;
+    margin-left: 70%
+  }
+  60%, 79.9% {  
+    margin-top: 30%;
+    margin-left: 20%;
+  }
+  80%, 99.9% {  
+    margin-top: 30%;
+    margin-left: 80%;
+  }
+}
